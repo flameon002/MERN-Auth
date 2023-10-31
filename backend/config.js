@@ -1,1 +1,3 @@
-export const PORT = 3531;
+export const PORT = 3530;
+
+export const SECRET_KEY= 'secretkey'
