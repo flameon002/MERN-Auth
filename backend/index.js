@@ -24,8 +24,18 @@ const conectDB = async () => {
 };
 conectDB();
 // middleware
+app.use(bodyParser());
+app.use(cors());
+
+
+
+
 
 // schema
+
+
+
+
 
 // routes
 
