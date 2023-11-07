@@ -7,11 +7,13 @@ const Login = () => {
   const navigate = useNavigate();
 
 
-  const onSubmit = (data) => {
-    console.log(data);
-    axios.post("http://localhost:3530/login", data)
+  const onSubmit = async(data) => {
+    // console.log(data);
+    await axios.post("http://localhost:3530/login", data)
     .then((res) => {
-      console.log(res.data);
+      console.log(res);
+      const token = res.data.token;
+      localStorage.setItem('token', token)
       navigate("/account");
     });
   };
@@ -51,7 +53,7 @@ const Login = () => {
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-[200px] h-[50px]"
               type="subbmit"
             >
-              Sign Up
+              Log In
             </button>
           </form>
         </div>

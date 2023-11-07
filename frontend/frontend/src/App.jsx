@@ -3,15 +3,14 @@ import Navbar from "./components/Navbar"
 
 
 const App = () => {
-
-
+const isUserSignIn=!!localStorage.getItem('token')
   return (
     <>
-      <Navbar/>
+      <Navbar sigIn={isUserSignIn}/>
 
 
 
-    <RouterPages />
+    <RouterPages sigIn={isUserSignIn} />
     </>
   )
 }

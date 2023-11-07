@@ -76,7 +76,7 @@ app.post("/login", async (req, res) => {
     const token = jwt.sign({ userId: user._id }, SECRET_KEY, {
       expiresIn: "1hr",
     });
-    res.json({ message: "Login succesfuly" });
+    res.json({ message: "Login succesfuly", token });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Error in loggin in" });
