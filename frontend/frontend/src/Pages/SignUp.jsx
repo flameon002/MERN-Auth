@@ -5,13 +5,14 @@ import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:3530/register", data).then((res) => {
+    axios.post("http://localhost:3530/register", data)
+    .then((res) => {
       console.log(res.data);
-      navigate("/login")
+      navigate("/login");
     });
   };
 
@@ -41,6 +42,7 @@ const navigate = useNavigate()
             <br />
             <input
               type="text"
+              placeholder="Email"
               {...register("email", { required: true })}
               className="w-[400px] h-[40px] rounded-xl bg-zinc-700 p-2"
             />
@@ -50,6 +52,7 @@ const navigate = useNavigate()
             <br />
             <input
               type="text"
+              placeholder="User name"
               {...register("userName", { required: true })}
               className="w-[400px] h-[40px] rounded-xl bg-zinc-700 p-2"
             />
@@ -59,13 +62,15 @@ const navigate = useNavigate()
             <br />
             <input
               type="password"
+              placeholder="Password"
               {...register("password", { required: true })}
               className="w-[400px] h-[40px] rounded-xl bg-zinc-700 p-2"
             />
             <br />
             <br />
 
-            <button className="w-[200px] h-[50px] border hover:bg-teal-900">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-[200px] h-[50px]"
+            type="subbmit">
               Sign Up
             </button>
           </form>
@@ -79,3 +84,6 @@ const navigate = useNavigate()
 };
 
 export default SignUp;
+
+
+{/* <button className="w-[200px] h-[50px] border hover:bg-teal-900" */}
