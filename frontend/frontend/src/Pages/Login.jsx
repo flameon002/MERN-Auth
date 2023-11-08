@@ -8,14 +8,15 @@ const Login = () => {
 
 
   const onSubmit = async(data) => {
-    // console.log(data);
     await axios.post("http://localhost:3530/login", data)
     .then((res) => {
-      console.log(res);
       const token = res.data.token;
       localStorage.setItem('token', token)
       navigate("/account");
-    });
+    })
+    .catch(()=>{
+      alert('Invalid credentials')
+    })
   };
 
 

@@ -14,9 +14,6 @@ const RouterPages = () => {
 
         <Route path="/login" element={<Login />} />
 
-        {/* <Route path="*" element={<h1>asdad</h1>} /> */}
-
-        {/* {isUserSignIn ? <Route path="/account" element={<Account />} /> : ""} */}
         
         {isUserSignIn && <Route path="/account" element={<Account />} />}
       </Routes>
